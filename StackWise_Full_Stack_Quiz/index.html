@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StackWise | Full Stack Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon">S</div><div><b>StackWise</b><span>Full Stack Quiz</span></div></div>
+  <nav>
+    <p class="nav-label">QUIZ SECTIONS</p>
+    <button class="topic active" data-topic="all">◉ All Topics <span>75</span></button>
+    <button class="topic" data-topic="html">◇ HTML <span>15</span></button>
+    <button class="topic" data-topic="css">◇ CSS <span>15</span></button>
+    <button class="topic" data-topic="javascript">◇ JavaScript <span>15</span></button>
+    <button class="topic" data-topic="backend">◇ Backend & APIs <span>15</span></button>
+    <button class="topic" data-topic="database">◇ Databases <span>15</span></button>
+  </nav>
+  <div class="side-note"><b>75 questions</b><br>15 questions in every section.</div>
+</aside>
+
+<main class="main">
+<section id="home" class="screen">
+  <header class="top"><div><p class="eyebrow">LEARN • PRACTICE • MASTER</p><h1>Full Stack Development Quiz</h1><p>Test your skills section by section and understand exactly where you stand.</p></div><div class="badge">75 MCQs</div></header>
+  <div class="hero">
+    <div><h2>Master the full stack, one section at a time.</h2><p>Each topic now contains <b>15 carefully selected questions</b>, giving you enough practice to measure real progress.</p><button class="primary" data-open="all">Start Full Assessment →</button></div>
+    <div class="hero-orbit"><div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div><div class="core">75<br><small>MCQs</small></div></div>
+  </div>
+  <div class="section-title"><h2>Choose a section</h2><span>15 questions each</span></div>
+  <div class="cards">
+    <div class="card" data-open="html"><b>HTML</b><strong>15 Questions</strong><p>Structure, semantic elements, forms, tables and accessibility.</p><button>Practice →</button></div>
+    <div class="card" data-open="css"><b>CSS</b><strong>15 Questions</strong><p>Selectors, layouts, spacing, responsive design and styling.</p><button>Practice →</button></div>
+    <div class="card" data-open="javascript"><b>JavaScript</b><strong>15 Questions</strong><p>DOM, arrays, functions, JSON, events and async concepts.</p><button>Practice →</button></div>
+    <div class="card" data-open="backend"><b>Backend & APIs</b><strong>15 Questions</strong><p>HTTP, REST, APIs, Node.js, middleware and status codes.</p><button>Practice →</button></div>
+    <div class="card" data-open="database"><b>Databases</b><strong>15 Questions</strong><p>SQL, keys, joins, constraints, filtering and aggregation.</p><button>Practice →</button></div>
+  </div>
+</section>
+
+<section id="quiz" class="screen hidden">
+<header class="quiz-head"><div><p class="eyebrow">CURRENT ASSESSMENT</p><h2 id="quizTopic">Topic</h2></div><div class="timer" id="timer">10:00</div></header>
+<div class="progress-wrap"><div class="progress"><span id="progress"></span></div><div><span id="qCount">Question 1</span><span id="answeredCount">0 answered</span></div></div>
+<div class="quiz-grid">
+  <div class="question-panel"><span class="pill" id="questionLabel">HTML</span><h2 id="question"></h2><div id="options"></div><div class="actions"><button id="prev" class="secondary">← Previous</button><button id="next" class="primary">Next →</button></div></div>
+  <div class="palette"><h3>Question Map</h3><p>Jump to any question.</p><div id="palette"></div><div class="legend"><span><i class="done"></i>Answered</span><span><i class="current"></i>Current</span><span><i></i>Unanswered</span></div><button id="backHome" class="secondary full">Exit Quiz</button></div>
+</div>
+</section>
+
+<section id="result" class="screen hidden">
+<header class="top"><div><p class="eyebrow">ASSESSMENT COMPLETE</p><h1>Your Performance Dashboard</h1><p>Review your accuracy and identify the topics that need more practice.</p></div></header>
+<div class="result-grid">
+  <div class="score-card"><div class="donut" id="donut"><div><b id="donutText">0%</b><small>Accuracy</small></div></div><div class="metrics"><div><span>Correct</span><b id="correct">0</b></div><div><span>Total</span><b id="total">0</b></div><div><span>Time</span><b id="timeUsed">0:00</b></div></div></div>
+  <div class="insight"><span class="pill">PERSONALIZED INSIGHT</span><h2 id="recommendation">Keep practicing.</h2><p>Your section-wise accuracy is shown below. Focus on your weakest area and retake it.</p><button id="retake" class="primary">Retake Assessment</button></div>
+</div>
+<div class="section-title"><h2>Section Accuracy</h2><span id="resultMode"></span></div>
+<div id="topicBars" class="topic-bars"></div>
+</section>
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
